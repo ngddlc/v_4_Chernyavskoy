@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 
-class PersonalArea : AppCompatActivity() {
+class PersonalData : AppCompatActivity() {
 
     private lateinit var tvWelcome: TextView
     private lateinit var btnTakeSnapshot: MaterialButton
@@ -27,7 +27,7 @@ class PersonalArea : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.personal_area)
+        setContentView(R.layout.personal_data)
 
         dbHelper = DBHelper(this)
 
@@ -42,7 +42,7 @@ class PersonalArea : AppCompatActivity() {
 
         // Control buttons logic
         btnLogout.setOnClickListener {
-            val intent = Intent(this, LogIn::class.java)
+            val intent = Intent(this, SessionManager::class.java)
             startActivity(intent)
             finish()
         }

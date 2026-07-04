@@ -21,8 +21,7 @@
             android:id="@+id/ivAvatar"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:src="@android:drawable/sym_def_app_icon"
-            android:background="#EBEBEB"
+            android:src="@drawable/img_avatar"
             android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.Circle"
             app:layout_constraintTop_toTopOf="parent"
@@ -30,12 +29,12 @@
             app:layout_constraintStart_toStartOf="parent"
             android:contentDescription="User Avatar" />
 
-        <!-- Welcome Text (Привет, Андрей!) -->
+        <!-- Welcome Text (Привет, Михаил!) -->
         <TextView
             android:id="@+id/tvWelcome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Привет, Андрей!"
+            android:text="Привет, Михаил!"
             android:textColor="#2E2E2E"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -75,7 +74,7 @@
             android:paddingHorizontal="16dp"
             android:paddingBottom="16dp">
 
-            <!-- News Item 1 -->
+            <!-- News Item 1 (Banana Car) -->
             <LinearLayout
                 android:id="@+id/newsItem1"
                 android:layout_width="match_parent"
@@ -96,14 +95,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@android:drawable/ic_menu_gallery"
-                        android:contentDescription="News Image 1" />
+                        android:src="@drawable/img_news_banana"
+                        android:contentDescription="Banana Car News" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Состоялся запуск ракеты с космодрома Байконур"
+                    android:text="Легковое такси по городу\nКласс: Бизнес"
                     android:textColor="#2E2E2E"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -119,7 +118,7 @@
                     android:layout_marginTop="4dp" />
             </LinearLayout>
 
-            <!-- News Item 2 -->
+            <!-- News Item 2 (Yellow Truck) -->
             <LinearLayout
                 android:id="@+id/newsItem2"
                 android:layout_width="match_parent"
@@ -140,14 +139,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@android:drawable/ic_menu_gallery"
-                        android:contentDescription="News Image 2" />
+                        android:src="@drawable/img_news_truck"
+                        android:contentDescription="Yellow Truck News" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Пуск ракеты с космодрома Восточный"
+                    android:text="Междугородняя перевозка грузов"
                     android:textColor="#2E2E2E"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -218,7 +217,7 @@
             app:iconSize="16dp"
             app:iconTint="#FFFFFF"
             app:cornerRadius="22dp"
-            app:backgroundTint="#FF5630" />
+            app:backgroundTint="#FFC222" />
 
         <!-- Status Button (Online badge) -->
         <com.google.android.material.button.MaterialButton
@@ -236,25 +235,25 @@
             app:iconSize="16dp"
             app:iconTint="#FFFFFF"
             app:cornerRadius="22dp"
-            app:backgroundTint="#FF5630" />
+            app:backgroundTint="#FFC222" />
 
-        <!-- Camera Button -->
+        <!-- Map Location Button -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnTakeSnapshot"
+            android:id="@+id/btnLocation"
             android:layout_width="0dp"
             android:layout_height="44dp"
             android:layout_weight="1"
             android:layout_marginHorizontal="4dp"
-            android:text="Снимок"
+            android:text="Место"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
             android:insetTop="0dp"
             android:insetBottom="0dp"
-            app:icon="@drawable/ic_camera"
+            app:icon="@drawable/ic_location"
             app:iconSize="16dp"
             app:iconTint="#FFFFFF"
             app:cornerRadius="22dp"
-            app:backgroundTint="#FF5630" />
+            app:backgroundTint="#FFC222" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

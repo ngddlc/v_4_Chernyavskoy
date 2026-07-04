@@ -15,7 +15,7 @@
         
         <!-- Login Screen (Launcher) -->
         <activity
-            android:name=".LogIn"
+            android:name=".SessionManager"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,7 @@
         
         <!-- Personal Area Screen -->
         <activity
-            android:name=".PersonalArea"
+            android:name=".PersonalData"
             android:exported="false" />
             
         <!-- Setting Screen -->

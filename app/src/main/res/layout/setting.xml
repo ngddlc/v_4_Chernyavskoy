@@ -28,6 +28,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <!-- Title -->
         <TextView
             android:id="@+id/tvHeaderTitle"
             android:layout_width="wrap_content"
@@ -40,6 +41,19 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/btnBack" />
+
+        <!-- Top Right Exit/Door Icon -->
+        <ImageButton
+            android:id="@+id/btnSettingsExit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_exit_yellow"
+            android:contentDescription="Exit Settings"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Settings List -->
@@ -70,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:useMaterialThemeColors="false"
-                app:thumbTint="#FF5630"
+                app:thumbTint="#FFC222"
                 app:trackTint="#EBEBEB" />
         </LinearLayout>
 
@@ -79,7 +93,7 @@
             android:layout_height="1dp"
             android:background="#EBEBEB" />
 
-        <!-- Option 2: Notify about new launch -->
+        <!-- Option 2: Notify about new order -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="64dp"
@@ -90,7 +104,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Уведомлять меня о новом запуске"
+                android:text="Уведомлять меня о новом заказе"
                 android:textColor="#2E2E2E"
                 android:textSize="16sp" />
 
@@ -99,7 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:useMaterialThemeColors="false"
-                app:thumbTint="#FF5630"
+                app:thumbTint="#FFC222"
                 app:trackTint="#EBEBEB" />
         </LinearLayout>
 
@@ -108,7 +122,7 @@
             android:layout_height="1dp"
             android:background="#EBEBEB" />
 
-        <!-- Option 3: Display news -->
+        <!-- Option 3: Track statistics -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="64dp"
@@ -119,7 +133,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Отображать последние новости"
+                android:text="Вести статистику моих заказов"
                 android:textColor="#2E2E2E"
                 android:textSize="16sp" />
 
@@ -128,7 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:useMaterialThemeColors="false"
-                app:thumbTint="#FF5630"
+                app:thumbTint="#FFC222"
                 app:trackTint="#EBEBEB" />
         </LinearLayout>
 
@@ -137,7 +151,7 @@
             android:layout_height="1dp"
             android:background="#EBEBEB" />
 
-        <!-- Reset Button -->
+        <!-- Reset Button (Pill shape) -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnReset"
             android:layout_width="match_parent"
@@ -146,8 +160,9 @@
             android:text="Сбросить настройки"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            app:cornerRadius="8dp"
-            app:backgroundTint="#FF5630" />
+            android:textStyle="bold"
+            app:cornerRadius="28dp"
+            app:backgroundTint="#FFC222" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

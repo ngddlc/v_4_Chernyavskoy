@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 
-class LogIn : AppCompatActivity() {
+class SessionManager : AppCompatActivity() {
 
     private lateinit var etUsername: EditText
     private lateinit var etPassword: EditText
@@ -18,7 +18,7 @@ class LogIn : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.log_in)
+        setContentView(R.layout.session_manager)
 
         dbHelper = DBHelper(this)
 

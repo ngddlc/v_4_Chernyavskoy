@@ -7,17 +7,17 @@
     android:background="#FFFFFF"
     android:padding="24dp">
 
-    <!-- Logo (Cat Astronaut) -->
+    <!-- Top Car Illustration -->
     <ImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/logo"
+        android:id="@+id/ivHeaderImage"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/img_car_header"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="App Logo" />
+        android:contentDescription="Car Illustration" />
 
     <!-- Username Input Area -->
     <LinearLayout
@@ -25,8 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="48dp"
-        app:layout_constraintTop_toBottomOf="@id/ivLogo">
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/ivHeaderImage">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_person"
-                app:tint="#FF5630" />
+                app:tint="#FFC222" />
 
             <EditText
                 android:id="@+id/etUsername"
@@ -48,7 +48,7 @@
                 android:layout_weight="1"
                 android:layout_marginStart="16dp"
                 android:background="@null"
-                android:hint="Андрей"
+                android:hint="Михаил"
                 android:textColor="#2E2E2E"
                 android:textColorHint="#AEAEAE"
                 android:textSize="16sp"
@@ -58,7 +58,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1.5dp"
-            android:background="#FF5630" />
+            android:background="#FFC222" />
     </LinearLayout>
 
     <!-- Password Input Area -->
@@ -81,7 +81,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_lock"
-                app:tint="#FF5630" />
+                app:tint="#FFC222" />
 
             <EditText
                 android:id="@+id/etPassword"
@@ -102,14 +102,14 @@
                 android:layout_height="24dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_eye"
-                app:tint="#FF5630"
+                app:tint="#FFC222"
                 android:contentDescription="Toggle Password Visibility" />
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1.5dp"
-            android:background="#FF5630" />
+            android:background="#FFC222" />
     </LinearLayout>
 
     <!-- Register Link / Button -->
@@ -119,7 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="Зарегистрироваться"
-        android:textColor="#FF5630"
+        android:textColor="#FFC222"
         android:textSize="18sp"
         android:textStyle="bold"
         android:clickable="true"
@@ -139,7 +139,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:cornerRadius="28dp"
-        app:backgroundTint="#FF5630"
+        app:backgroundTint="#FFC222"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
