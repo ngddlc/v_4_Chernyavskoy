@@ -36,7 +36,7 @@ class PersonalData : AppCompatActivity() {
         btnLocation = findViewById(R.id.btnLocation)
         btnSettings = findViewById(R.id.btnSettings)
 
-        val username = intent.getStringExtra("username") ?: "Михаил"
+        val username = intent.getStringExtra("username") ?: "Пользователь"
         tvWelcome.text = android.text.Html.fromHtml("Привет, <font color='#FFC222'>$username</font>!", android.text.Html.FROM_HTML_MODE_LEGACY)
 
         // Logout
