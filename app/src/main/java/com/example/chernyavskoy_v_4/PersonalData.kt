@@ -22,7 +22,6 @@ class PersonalData : AppCompatActivity() {
     private lateinit var btnStatus: MaterialButton
     private lateinit var btnLocation: MaterialButton
     private lateinit var btnSettings: ImageButton
-    private lateinit var rvUsers: RecyclerView
     private lateinit var dbHelper: DBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +35,6 @@ class PersonalData : AppCompatActivity() {
         btnStatus = findViewById(R.id.btnStatus)
         btnLocation = findViewById(R.id.btnLocation)
         btnSettings = findViewById(R.id.btnSettings)
-        rvUsers = findViewById(R.id.rvUsers)
 
         val username = intent.getStringExtra("username") ?: "Михаил"
         tvWelcome.text = android.text.Html.fromHtml("Привет, <font color='#FFC222'>$username</font>!", android.text.Html.FROM_HTML_MODE_LEGACY)
@@ -81,23 +79,12 @@ class PersonalData : AppCompatActivity() {
             val intent = Intent(this, Setting::class.java)
             startActivity(intent)
         }
-
-        // Setup users RecyclerView
-        setupUsersList()
     }
 
     override fun onResume() {
         super.onResume()
-        // Refresh users list (in case a new user registered)
-        setupUsersList()
         // Handle Settings preferences
         applySettings()
-    }
-
-    private fun setupUsersList() {
-        val users = dbHelper.getAllUsers()
-        rvUsers.layoutManager = LinearLayoutManager(this)
-        rvUsers.adapter = UserAdapter(users)
     }
 
     private fun applySettings() {
@@ -110,26 +97,5 @@ class PersonalData : AppCompatActivity() {
         val visibility = if (showNews) View.VISIBLE else View.GONE
         newsItem1.visibility = visibility
         newsItem2.visibility = visibility
-    }
-
-    // Inner class for RecyclerView Adapter
-    private class UserAdapter(private val users: List<String>) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
-
-        class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            val tvUsername: TextView = itemView.findViewById(R.id.tvUsername)
-        }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.user_item, parent, false)
-            return UserViewHolder(view)
-        }
-
-        override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-            holder.tvUsername.text = users[position]
-        }
-
-        override fun getItemCount(): Int {
-            return users.size
-        }
     }
 }

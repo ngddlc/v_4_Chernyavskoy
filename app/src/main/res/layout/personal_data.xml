@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#F5F5F5"
+    tools:context=".PersonalData">
 
     <!-- Header / Top Bar -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +22,7 @@
             android:id="@+id/ivAvatar"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:src="@drawable/img_avatar"
+            android:src="@drawable/img_news_truck"
             android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.Circle"
             app:layout_constraintTop_toTopOf="parent"
@@ -71,7 +72,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="16dp"
             android:paddingBottom="16dp">
 
             <!-- News Item 1 (Banana Car) -->
@@ -80,21 +80,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginBottom="24dp">
+                android:layout_marginBottom="24dp"
+                android:background="#FFFFFF"
+                android:paddingBottom="16dp">
 
                 <!-- Rounded Card for News Image -->
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    app:cardCornerRadius="16dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="0dp"
                     app:cardElevation="0dp"
                     app:strokeWidth="0dp"
                     android:backgroundTint="#EBEBEB">
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
                         android:src="@drawable/img_news_banana"
                         android:contentDescription="Banana Car News" />
                 </com.google.android.material.card.MaterialCardView>
@@ -102,6 +105,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
                     android:text="Легковое такси по городу\nКласс: Бизнес"
                     android:textColor="#2E2E2E"
                     android:textSize="16sp"
@@ -112,6 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:paddingHorizontal="16dp"
                     android:text="22 декабря, в 11:20"
                     android:textColor="#8C8C8C"
                     android:textSize="12sp"
@@ -124,28 +129,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginBottom="24dp">
+                android:layout_marginBottom="24dp"
+                android:background="#FFFFFF"
+                android:paddingBottom="16dp">
 
                 <!-- Rounded Card for News Image -->
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    app:cardCornerRadius="16dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="0dp"
                     app:cardElevation="0dp"
                     app:strokeWidth="0dp"
                     android:backgroundTint="#EBEBEB">
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/img_news_truck"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_avatar"
                         android:contentDescription="Yellow Truck News" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
                     android:text="Междугородняя перевозка грузов"
                     android:textColor="#2E2E2E"
                     android:textSize="16sp"
@@ -156,6 +165,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:paddingHorizontal="16dp"
                     android:text="23 марта, в 22:40"
                     android:textColor="#8C8C8C"
                     android:textSize="12sp"
@@ -168,36 +178,20 @@
                 android:background="#EBEBEB"
                 android:layout_marginBottom="16dp" />
 
-            <!-- Registered Users Section (SQLite Column) -->
-            <TextView
-                android:id="@+id/tvNewsTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Пользователи приложения"
-                android:textColor="#2E2E2E"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="12dp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvUsers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                tools:listitem="@layout/user_item" />
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Buttons Layout (Capsule shapes) -->
+    <!-- Bottom Buttons Layout -->
     <LinearLayout
         android:id="@+id/llBottomButtons"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:gravity="center"
         android:paddingHorizontal="12dp"
         android:paddingBottom="16dp"
         android:background="#FFFFFF"
+        android:elevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:weightSum="3">
 
@@ -205,54 +199,57 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogout"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="56dp"
             android:layout_weight="1"
-            android:layout_marginHorizontal="4dp"
+            android:layout_marginHorizontal="2dp"
             android:text="Выйти"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             app:icon="@drawable/ic_exit"
-            app:iconSize="16dp"
+            app:iconSize="18dp"
+            app:iconPadding="4dp"
             app:iconTint="#FFFFFF"
-            app:cornerRadius="22dp"
+            app:cornerRadius="28dp"
             app:backgroundTint="#FFC222" />
 
         <!-- Status Button (Online badge) -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnStatus"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="56dp"
             android:layout_weight="1"
-            android:layout_marginHorizontal="4dp"
+            android:layout_marginHorizontal="2dp"
             android:text="Онлайн"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             app:icon="@drawable/ic_globe_white"
-            app:iconSize="16dp"
+            app:iconSize="18dp"
+            app:iconPadding="4dp"
             app:iconTint="#FFFFFF"
-            app:cornerRadius="22dp"
+            app:cornerRadius="28dp"
             app:backgroundTint="#FFC222" />
 
         <!-- Map Location Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLocation"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="56dp"
             android:layout_weight="1"
-            android:layout_marginHorizontal="4dp"
+            android:layout_marginHorizontal="2dp"
             android:text="Место"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             app:icon="@drawable/ic_location"
-            app:iconSize="16dp"
+            app:iconSize="18dp"
+            app:iconPadding="4dp"
             app:iconTint="#FFFFFF"
-            app:cornerRadius="22dp"
+            app:cornerRadius="28dp"
             app:backgroundTint="#FFC222" />
     </LinearLayout>
 

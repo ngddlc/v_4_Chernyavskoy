@@ -1,5 +1,6 @@
 package com.example.chernyavskoy_v_4
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Gravity
@@ -38,6 +39,9 @@ class Setting : AppCompatActivity() {
         }
 
         btnSettingsExit.setOnClickListener {
+            val intent = Intent(this, SessionManager::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
             finish()
         }
 
