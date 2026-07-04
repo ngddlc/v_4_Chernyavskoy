@@ -13,6 +13,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial
 class Setting : AppCompatActivity() {
 
     private lateinit var btnBack: ImageButton
+    private lateinit var btnSettingsExit: ImageButton
     private lateinit var switchLocation: SwitchMaterial
     private lateinit var switchNotify: SwitchMaterial
     private lateinit var switchNews: SwitchMaterial
@@ -26,12 +27,17 @@ class Setting : AppCompatActivity() {
         sharedPrefs = getSharedPreferences("AppSettings", MODE_PRIVATE)
 
         btnBack = findViewById(R.id.btnBack)
+        btnSettingsExit = findViewById(R.id.btnSettingsExit)
         switchLocation = findViewById(R.id.switchLocation)
         switchNotify = findViewById(R.id.switchNotify)
         switchNews = findViewById(R.id.switchNews)
         btnReset = findViewById(R.id.btnReset)
 
         btnBack.setOnClickListener {
+            finish()
+        }
+
+        btnSettingsExit.setOnClickListener {
             finish()
         }
 
@@ -65,9 +71,9 @@ class Setting : AppCompatActivity() {
 
         switchNotify.setOnCheckedChangeListener { _, isChecked ->
             val text = if (isChecked) {
-                "Включены уведомления о новом запуске"
+                "Включены уведомления о новом заказе"
             } else {
-                "Отключены уведомления о новом запуске"
+                "Отключены уведомления о новом заказе"
             }
             showCustomToast(text)
             sharedPrefs.edit().putBoolean("show_notify", isChecked).apply()
@@ -75,9 +81,9 @@ class Setting : AppCompatActivity() {
 
         switchNews.setOnCheckedChangeListener { _, isChecked ->
             val text = if (isChecked) {
-                "Включено отображение новостей"
+                "Включена статистика моих заказов"
             } else {
-                "Отключено отображение новостей"
+                "Отключена статистика моих заказов"
             }
             showCustomToast(text)
             sharedPrefs.edit().putBoolean("show_news", isChecked).apply()

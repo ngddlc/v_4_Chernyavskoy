@@ -100,7 +100,7 @@ class SessionManager : AppCompatActivity() {
 
         val isValidUser = dbHelper.checkUser(username, password)
         if (isValidUser) {
-            val intent = Intent(this, PersonalArea::class.java).apply {
+            val intent = Intent(this, PersonalData::class.java).apply {
                 putExtra("username", username)
             }
             startActivity(intent)
